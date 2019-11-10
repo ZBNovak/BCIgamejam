@@ -93,7 +93,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 				double lastTimeStamp = inlet.pull_sample(sample, 0.0f);
 
 				if (lastTimeStamp != 0.0) {
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -217,7 +217,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
 				if (lastTimeStamp != 0.0)
 				{
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -333,7 +333,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
 				if (lastTimeStamp != 0.0)
 				{
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -448,7 +448,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
 				if (lastTimeStamp != 0.0)
 				{
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -563,7 +563,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
 				if (lastTimeStamp != 0.0)
 				{
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -708,7 +708,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
 				if (lastTimeStamp != 0.0)
 				{
-					// do not miss the first one found
+					// do not MLSs the first one found
 					Process(sample, lastTimeStamp);
 					// pull as long samples are available
 					while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)

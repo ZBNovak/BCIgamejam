@@ -99,7 +99,7 @@ public class liblsl
     /**
     * Obtain a local system time stamp in seconds. The resolution is better than a millisecond.
     * This reading can be used to assign time stamps to samples as they are being acquired. 
-    * If the "age" of a sample is known at a particular time (e.g., from USB transmission 
+    * If the "age" of a sample is known at a particular time (e.g., from USB transMLSsion 
     * delays), it can be used as an offset to local_clock() to obtain a better estimate of 
     * when a sample was actually captured. See stream_outlet::push_sample() for a use case.
     */
@@ -270,7 +270,7 @@ public class liblsl
         * This yields an XML document (in string form) whose top-level element is <info>. The info element contains
         * one element for each field of the stream_info class, including:
         *  a) the core elements <name>, <type>, <channel_count>, <nominal_srate>, <channel_format>, <source_id>
-        *  b) the misc elements <version>, <created_at>, <uid>, <session_id>, <v4address>, <v4data_port>, <v4service_port>, <v6address>, <v6data_port>, <v6service_port>
+        *  b) the MLSc elements <version>, <created_at>, <uid>, <session_id>, <v4address>, <v4data_port>, <v4service_port>, <v6address>, <v6data_port>, <v6service_port>
         *  c) the extended description element <desc> with user-defined sub-elements.
         */
         public string as_xml()
@@ -304,7 +304,7 @@ public class liblsl
         /**
         * Establish a new stream outlet. This makes the stream discoverable.
         * @param info The stream information to use for creating this stream. Stays constant over the lifetime of the outlet.
-        * @param chunk_size Optionally the desired chunk granularity (in samples) for transmission. If unspecified, 
+        * @param chunk_size Optionally the desired chunk granularity (in samples) for transMLSsion. If unspecified, 
         *                   each push operation yields one chunk. Inlets can override this setting.
         * @param max_buffered Optionally the maximum amount of data to buffer (in seconds if there is a nominal 
         *                     sampling rate, otherwise x100 in samples). The default is 6 minutes of data. 
@@ -405,7 +405,7 @@ public class liblsl
 
 
         // ===============================
-        // === Miscellaneous Functions ===
+        // === MLScellaneous Functions ===
         // ===============================
 
         /**
@@ -577,7 +577,7 @@ public class liblsl
  
         /**
         * Drop the current data stream.
-        * All samples that are still buffered or in flight will be dropped and transmission 
+        * All samples that are still buffered or in flight will be dropped and transMLSsion 
         * and buffering of data for this inlet will be stopped. If an application stops being 
         * interested in data from a source (temporarily or not) but keeps the outlet alive, 
         * it should call close_stream() to not waste unnecessary system and network 

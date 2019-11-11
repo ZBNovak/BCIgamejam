@@ -13,11 +13,17 @@ public class enemyController : MonoBehaviour {
     //Scene object
     private Scene scene;
 
-
+    
     public int battleNum = 1;
 
     //Enemy Health
     private int initialHealth = 100;
+    private int health;
+    GameObject healthBarEnemy = GameObject.Find("healthBarEnemy");
+    private float scaleWidth = .0355268F;
+    private float scaleX = .0371854F, scaleY = 0.009413587F, scaleZ = 0.008859847F;
+    private float xWidth = .00122F;
+    private float x = -.19722F, y = -0.0148F, z = 0;
 
     //Time inbetween weapon
     private float timeBetweenWeapons;
@@ -26,7 +32,6 @@ public class enemyController : MonoBehaviour {
     //Weapon Preference
     private int laserLimit = 33;
     private int missleLimit = 33;
-    private int shieldLimit = 33;
 
 
 
@@ -35,6 +40,8 @@ public class enemyController : MonoBehaviour {
         anim = GetComponent<Animator>();
         anim.SetBool("inScene", false);
         lastTime = Time.time;
+        health = initialHealth;
+        healthBarEnemy.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
     }
 
     //Enemy properties based on battle number
@@ -43,7 +50,6 @@ public class enemyController : MonoBehaviour {
             case 1:
                 laserLimit = 33;
                 missleLimit = 33;
-                shieldLimit = 33;
                 break;
             case 2:
 
@@ -73,7 +79,10 @@ public class enemyController : MonoBehaviour {
         if (Time.time-lastTime>timeBetweenWeapons) { 
             chooseWeapon();
             lastTime = Time.time;
-        }    
+        }
+
+        //Change health bar if needed
+        calculateHealthBar();
     }
 
     //Choose Weapon to Use
@@ -108,5 +117,12 @@ public class enemyController : MonoBehaviour {
                 break;
         }
         return;
+    }
+
+    private void calculateHealthBar() {
+
+        healthBarEnemy.transform.localScale = new Vector3(((float)health / 100) * scaleWidth, scaleY, scaleZ);
+        healthBarEnemy.transform.Translate(new Vector3(((float)health / 100) * xWidth, y, z));
+
     }
 }

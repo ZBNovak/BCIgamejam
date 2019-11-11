@@ -24,7 +24,7 @@ public class MapController : MonoBehaviour
         MLS3.highlighted1 = false;
         MLS4.highlighted1 = false;
 
-        highlightedOption = Random.Range(1, 5); // Randomly switches which is highlighted (upper limit has to be +1)
+        //highlightedOption = Random.Range(1, 5); // Randomly switches which is highlighted (upper limit has to be +1)
 
         Debug.Log("changed highlight to " + highlightedOption);
 

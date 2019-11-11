@@ -14,26 +14,28 @@ public class enemyController : MonoBehaviour {
     private Scene scene;
 
     
-    public int battleNum = 1;
+    public int battleNum = GameStats.BattleNum;
 
     //Enemy Health
-    private int initialHealth = 100;
-    private int health;
+    public int initialHealth = 100;
+    public static int health;
     GameObject healthBarEnemy;
     private float scaleWidth = .0355268F;
-    private float scaleX = .0371854F, scaleY = 0.009413587F, scaleZ = 0.008859847F;
+    private readonly float scaleX = .0371854F, scaleY = 0.009413587F, scaleZ = 0.008859847F;
     private float xWidth = .00122F;
-    private float x = -.19722F, y = -0.0148F, z = 0;
+    private readonly float x = -.19722F, y = 0, z = 0;
 
+    public bool healthbarchanged = false; 
     //Time inbetween weapon
-    private float timeBetweenWeapons;
+    public float timeBetweenWeapons;
     private float lastTime;
 
     //Weapon Preference
     private int laserLimit = 33;
     private int missleLimit = 33;
 
-
+    //check for shields
+    public bool Shielded = false;
 
     // Start is called before the first frame update*************************************************************
     void Start(){
@@ -41,8 +43,12 @@ public class enemyController : MonoBehaviour {
         anim.SetBool("inScene", false);
         lastTime = Time.time;
         health = initialHealth;
+        if (GameStats.Path == GameStats.BattleNum)
+            health += 50;
         healthBarEnemy = GameObject.Find("healthBarEnemy");
-        healthBarEnemy.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+        healthBarEnemy.transform.localScale = new Vector3(scaleX, scaleY, scaleZ); //init scale
+
+
     }
 
     //Enemy properties based on battle number
@@ -82,8 +88,47 @@ public class enemyController : MonoBehaviour {
             lastTime = Time.time;
         }
 
+        //check if shields are up
+        if (GameObject.Find("ShieldClone")) {
+            Shielded = true;
+            print("en shielded");
+        }
+        else
+            Shielded = false;
+
+
+
+
+        /*
         //Change health bar if needed
-        calculateHealthBar();
+        if (healthbarchanged == true) {
+            calculateHealthBar();
+            healthbarchanged = false;
+        }
+        */
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        print("Enemy Hit");
+        if (col.gameObject.tag == "Lazer") {
+            print("Enemy Hit by LAzer");
+            if (Shielded == false) {
+                health = health - 15;
+                calculateHealthBar();
+            }
+        }
+        else {
+            print("Enemy hit by missile");
+            if (Shielded == false) {
+                health = health - 25;
+                calculateHealthBar();
+            }
+            else {
+                health = health - 5;
+                calculateHealthBar();
+            }
+        }
+
     }
 
     //Choose Weapon to Use
@@ -105,23 +150,38 @@ public class enemyController : MonoBehaviour {
     }
 
     //Use Weapon
+
+    public GameObject Missile;
+    public GameObject Lazer;
+    public GameObject Shield;
+    public GameObject SpawnforWep;
     private void useWeapon(int weapon) {
+        GameObject clone;
+        GameObject ShieldClone;
+
+        var SpawnPos = SpawnforWep.GetComponent<Transform>();
         switch (weapon) {
             case 1:
-
+                clone = Instantiate(Lazer, SpawnPos.transform.position, transform.rotation);
+                timeBetweenWeapons = 9 - GameStats.BattleNum;
                 break;
             case 2:
-
+                clone = Instantiate(Missile, SpawnPos.transform.position, transform.rotation);
+                timeBetweenWeapons = 12 - GameStats.BattleNum;
                 break;
             case 3:
-
+                ShieldClone = Instantiate(Shield, transform.position, transform.rotation);
+                Destroy(ShieldClone, 3);
+                //ADD VARIABLE BOOL SHIELD UP OR NAH 
+                //If shieldClone != exist then shield down > put this in update ^
+                timeBetweenWeapons = 2;
                 break;
         }
         return;
     }
 
     private void calculateHealthBar() {
-
+        //width = orig xwidth * health / original health
         healthBarEnemy.transform.localScale = new Vector3(((float)health / 100) * scaleWidth, scaleY, scaleZ);
         healthBarEnemy.transform.Translate(new Vector3(((float)health / 100) * xWidth, y, z));
 

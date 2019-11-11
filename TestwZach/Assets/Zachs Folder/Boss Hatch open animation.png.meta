@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: e5c157091b0f4491f94d4cca923494aa
+guid: 981238e7277af2e4880cea15879ba5ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 90300110609392202
-    second: Shield Activate_0
+      213: -6801579247016369178
+    second: Boss Hatch open animation_0
   - first:
-      213: -5189779801076365460
-    second: Shield Activate_1
+      213: 3886475352504819341
+    second: Boss Hatch open animation_1
   - first:
-      213: -3282635393729232938
-    second: Shield Activate_2
+      213: 3839677915669373575
+    second: Boss Hatch open animation_2
   - first:
-      213: -4323384957570325634
-    second: Shield Activate_3
+      213: 176883551800338853
+    second: Boss Hatch open animation_3
   - first:
-      213: 4516249977817539701
-    second: Shield Activate_4
+      213: -6780715949045394872
+    second: Boss Hatch open animation_4
   - first:
-      213: -6737390283343272990
-    second: Shield Activate_5
+      213: -4037903725215700849
+    second: Boss Hatch open animation_5
   - first:
-      213: -7878105928836879801
-    second: Shield Activate_6
+      213: -6512655285892838288
+    second: Boss Hatch open animation_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -103,23 +103,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shield Activate_0
+      name: Boss Hatch open animation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf3221579423555498043d92e175dcd6
-      internalID: 90300110609392202
+      spriteID: 965f038cf7c9d4943837a16cc312b443
+      internalID: -6801579247016369178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_1
+      name: Boss Hatch open animation_1
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ae4a76a2f424843b51ee9174c5060a
-      internalID: -5189779801076365460
+      spriteID: 312dc2f91c9f466429be3b745b441bb3
+      internalID: 3886475352504819341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_2
+      name: Boss Hatch open animation_2
       rect:
         serializedVersion: 2
         x: 64
@@ -175,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa251d1c00dce16438137ce19895f0c8
-      internalID: -3282635393729232938
+      spriteID: 97f5fe0c591ffdd4682e881550acfd2f
+      internalID: 3839677915669373575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_3
+      name: Boss Hatch open animation_3
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab7fd4de3aa91d24f81dc159cf55572f
-      internalID: -4323384957570325634
+      spriteID: 74fc4218c68a16441bf41f16f050be1e
+      internalID: 176883551800338853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_4
+      name: Boss Hatch open animation_4
       rect:
         serializedVersion: 2
         x: 32
@@ -217,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d529a5b3e41cd8429a0f651d397525a
-      internalID: 4516249977817539701
+      spriteID: 8e5a5d61743bf454ba6dfb9be05dd4e7
+      internalID: -6780715949045394872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_5
+      name: Boss Hatch open animation_5
       rect:
         serializedVersion: 2
         x: 64
@@ -238,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d0db4262bb6b2245821cec3409de52c
-      internalID: -6737390283343272990
+      spriteID: 9c963e5a0d0d10a43854aad5d5009890
+      internalID: -4037903725215700849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield Activate_6
+      name: Boss Hatch open animation_6
       rect:
         serializedVersion: 2
         x: 0
@@ -259,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c84c1cfe2f532424c8459f513024a4f6
-      internalID: -7878105928836879801
+      spriteID: 9c220921a21917e49bc2d1cac994d77e
+      internalID: -6512655285892838288
       vertices: []
       indices: 
       edges: []

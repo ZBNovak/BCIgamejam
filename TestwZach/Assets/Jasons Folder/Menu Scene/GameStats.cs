@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class GameStats : MonoBehaviour
 {
-    private static int battleNum;
+    public static int BattleNum;
+    public static int Score;
+    public static int Path; //for setting number of battles to take place
+
+    private void Start() {
+        BattleNum = 1;
+        Score = 0;
+    }
+
+
+    /*
+     private static int battleNum;
 
     public static int BattleNum
     {
@@ -17,5 +28,5 @@ public class GameStats : MonoBehaviour
             battleNum = value;
         }
     }
-
+    */
 }

@@ -20,7 +20,7 @@ public class BattleOptionController : MonoBehaviour
 
         highlightedOption = Random.Range(1, 4); // Randomly switches which is highlighted (upper limit has to be +1)
 
-        Debug.Log("changed highlight to " + highlightedOption);
+        //Debug.Log("changed highlight to " + highlightedOption);
 
         switch (highlightedOption) {
             case 1:
@@ -39,22 +39,67 @@ public class BattleOptionController : MonoBehaviour
         menuitem1 = GameObject.Find("UI_Laser"); //init all game objects and such you want to manipulate
         menuitem2 = GameObject.Find("UI_Missle");
         menuitem3 = GameObject.Find("UI_Shield");
-        InvokeRepeating("changeHighlight", 2.0f, 2.0f);
-
+        InvokeRepeating("changeHighlight", 1.0f, 1.0f);
+        lastTime = Time.time; //init start time (to track delay between choices)
     }
 
     // Update is called once per frame
+    public GameObject Missile;
+    public GameObject Lazer;
+    public GameObject Shield;
+    public GameObject Player;
 
+    public float timeBetweenWeapons;
+    private float lastTime;
+
+    public static bool Shielded = false;
     void Update() {
+        if (timeBetweenWeapons - (Time.time - lastTime) > 0)
+            CooldownDisplay.Counter = (timeBetweenWeapons - (Time.time - lastTime));
+        else
+            CooldownDisplay.Counter = 0f;
 
-/*
-        if (Input.GetKeyDown("space")) {
-            print("space key was pressed");
-            if (highlightedOption == 3) {
-                SceneManager.LoadScene("Map Scene", LoadSceneMode.Single);
+        if (GameObject.Find("ShieldCloneP")) {
+            Shielded = true;
+            print("P shields up");
+        }
+        else
+            Shielded = false;
+
+
+
+
+        GameObject clone;
+        GameObject ShieldCloneP;
+        Player = GameObject.Find("shipPlayer");
+        var PlayerPos = Player.GetComponent<Transform>();
+        if (Time.time - lastTime > timeBetweenWeapons) {
+            if (Input.GetKeyDown("space")) {
+                //print("space key was pressed");
+                if (highlightedOption == 1) {
+                    //Debug.Log("FIRE M");
+                    // Instantiate the projectile at the position and rotation of this transform
+
+                    clone = Instantiate(Lazer, transform.position, transform.rotation);
+                    timeBetweenWeapons = 7;
+                }
+                if (highlightedOption == 2) {
+                    //Debug.Log("FIRE L");
+                    clone = Instantiate(Missile, transform.position, transform.rotation);
+                    timeBetweenWeapons = 10;
+                }
+                if (highlightedOption == 3) {
+                    //Debug.Log("act sh");
+                    ShieldCloneP = Instantiate(Shield, PlayerPos.transform.position, PlayerPos.transform.rotation);
+                    Destroy(ShieldCloneP, 3);
+                    //ADD VARIABLE BOOL SHIELD UP OR NAH 
+                    //If shieldClone != exist then shield down > put this in update ^
+                    timeBetweenWeapons = 2;
+                }
+                lastTime = Time.time;
             }
         }
 
-    */
+ 
     }
 }

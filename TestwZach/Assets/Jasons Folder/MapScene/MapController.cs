@@ -24,7 +24,7 @@ public class MapController : MonoBehaviour
         MLS3.highlighted1 = false;
         MLS4.highlighted1 = false;
 
-        //highlightedOption = Random.Range(1, 5); // Randomly switches which is highlighted (upper limit has to be +1)
+        highlightedOption = Random.Range(1, 5); // Randomly switches which is highlighted (upper limit has to be +1)
 
         Debug.Log("changed highlight to " + highlightedOption);
 
@@ -67,20 +67,21 @@ public class MapController : MonoBehaviour
 
             if (highlightedOption == 1)
             {
-                SceneManager.LoadScene("Location 1", LoadSceneMode.Additive);
+                GameStats.Path = 4; // 4 long + BB
             }
             if (highlightedOption == 2)
             {
-                SceneManager.LoadScene("Location 2", LoadSceneMode.Additive);
+                GameStats.Path = 3; // 3 long + BB
             }
             if (highlightedOption == 3)
             {
-                SceneManager.LoadScene("Location 3", LoadSceneMode.Additive);
+                GameStats.Path = 2; // 2 long + BB
             }
             if (highlightedOption == 4)
             {
-                SceneManager.LoadScene("Location 4", LoadSceneMode.Additive);
+                GameStats.Path = 1; // 1 long + BB
             }
+            SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
         }
 
 

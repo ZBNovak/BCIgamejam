@@ -9,21 +9,36 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Jasons Folder/MapScene/Map Scene.unity
-    guid: 9d9c03f993a9b4284954617555575e63
-  - enabled: 1
     path: Assets/Jasons Folder/Menu Scene/Menu Scene.unity
     guid: 2c242384765544a199d06427ad8fe6c0
   - enabled: 1
+    path: Assets/Jasons Folder/MapScene/Map Scene.unity
+    guid: 9d9c03f993a9b4284954617555575e63
+  - enabled: 0
     path: Assets/Jasons Folder/Locations/Location 4.unity
     guid: a3012042737424146a95a676aa6c555d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jasons Folder/Locations/Location 3.unity
     guid: 97e266031a6054fff8aed7fcb2f36098
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jasons Folder/Locations/Location 2.unity
     guid: 730d1e068cbb845fb997a3f57ba436de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jasons Folder/Locations/Location 1.unity
     guid: 7a282ab9f930d49c48a6db26eb1af001
+  - enabled: 1
+    path: Assets/Zachs Folder/Level 1.unity
+    guid: bd3c2602cdfbf4984acea5eab2ba2695
+  - enabled: 1
+    path: Assets/Zachs Folder/Level 2.unity
+    guid: 82b9cd4fd163afb49a55ad46628eaa53
+  - enabled: 1
+    path: Assets/Zachs Folder/Level 3.unity
+    guid: 70e211eb82ed70c4da1aff31f232a010
+  - enabled: 1
+    path: Assets/Zachs Folder/Level 4.unity
+    guid: 284bd138db9bf78419122ba8b4488fb2
+  - enabled: 1
+    path: Assets/Zachs Folder/BossBattle.unity
+    guid: 03e47e22a0386fd40ad5f1972e38686e
   m_configObjects: {}

@@ -26,14 +26,14 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
             resolver = FindObjectOfType<Resolver>();
             Debug.Log(string.Format("Resolver is found {0}", resolver));
 
-            resolver.onStreamFound.AddListener(new UnityAction<LSLStreamInfoWrapper>(AStreamIsFound));
+            resolver.onStreamFound.AddListener(new UnityAction<LSLStreamInfoWrapper>(AStreaMLSFound));
 
             resolver.onStreamLost.AddListener(new UnityAction<LSLStreamInfoWrapper>(AStreamGotLost));
             
             if (resolver.knownStreams.Any(isTheExpected))
             {
                 var stream = resolver.knownStreams.First(isTheExpected);
-                AStreamIsFound(stream);
+                AStreaMLSFound(stream);
                 Debug.Log(string.Format("A Stream was found!"));
             }
         }
@@ -42,7 +42,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
         /// Callback method for the Resolver gets called each time the resolver found a stream
         /// </summary>
         /// <param name="stream"></param>
-        public virtual void AStreamIsFound(LSLStreamInfoWrapper stream)
+        public virtual void AStreaMLSFound(LSLStreamInfoWrapper stream)
         {
             if (!isTheExpected(stream))
                 return;
@@ -56,7 +56,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
         }
 
         /// <summary>
-        /// Callback method for the Resolver gets called each time the resolver misses a stream within its cache
+        /// Callback method for the Resolver gets called each time the resolver MLSses a stream within its cache
         /// </summary>
         /// <param name="stream"></param>
         public virtual void AStreamGotLost(LSLStreamInfoWrapper stream)
@@ -108,7 +108,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -144,7 +144,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -180,7 +180,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -216,7 +216,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -253,7 +253,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)
@@ -289,7 +289,7 @@ namespace Assets.LSL4Unity.Scripts.AbstractInlets
 
                 if (lastTimeStamp != 0.0)
                 {
-                    // do not miss the first one found
+                    // do not MLSs the first one found
                     Process(sample, lastTimeStamp);
                     // pull as long samples are available
                     while ((lastTimeStamp = inlet.pull_sample(sample, 0.0f)) != 0)

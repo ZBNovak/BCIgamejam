@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 1299268443
     locked: 0
+  - name: Health
+    uniqueID: 3329354877
+    locked: 0
   - name: Foreground
     uniqueID: 3858097963
     locked: 0

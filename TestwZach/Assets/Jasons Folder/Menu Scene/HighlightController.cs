@@ -57,7 +57,7 @@ public class HighlightController : MonoBehaviour
             print("space key was pressed");
             if (highlightedOption == 3)
             {
-                SceneManager.LoadScene("Jasons Scene", LoadSceneMode.Additive);
+                SceneManager.LoadScene("Map Scene", LoadSceneMode.Single);
             }
         }
 

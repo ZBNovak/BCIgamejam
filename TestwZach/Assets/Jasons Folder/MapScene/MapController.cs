@@ -51,7 +51,7 @@ public class MapController : MonoBehaviour
         mapitem2 = GameObject.Find("PBLocation (1)");
         mapitem3 = GameObject.Find("PBLocation (2)");
         mapitem4 = GameObject.Find("PBLocation (3)");
-        InvokeRepeating("changeHighlight", 2.0f, 2.0f);
+        InvokeRepeating("changeHighlight", 2.0f, 3.0f);
 
     }
 
@@ -65,13 +65,22 @@ public class MapController : MonoBehaviour
         {
             print("space key was pressed");
 
-            /*
-
+            if (highlightedOption == 1)
+            {
+                SceneManager.LoadScene("Location 1", LoadSceneMode.Additive);
+            }
+            if (highlightedOption == 2)
+            {
+                SceneManager.LoadScene("Location 2", LoadSceneMode.Additive);
+            }
             if (highlightedOption == 3)
             {
-                SceneManager.LoadScene("Jasons Scene", LoadSceneMode.Additive);
+                SceneManager.LoadScene("Location 3", LoadSceneMode.Additive);
             }
-            */
+            if (highlightedOption == 4)
+            {
+                SceneManager.LoadScene("Location 4", LoadSceneMode.Additive);
+            }
         }
 
 

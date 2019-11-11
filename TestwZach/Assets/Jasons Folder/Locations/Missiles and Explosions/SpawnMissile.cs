@@ -6,15 +6,16 @@ public class SpawnMissile : MonoBehaviour
 {
     // Instantiate a rigidbody then set the velocity
 
-    public Rigidbody projectile;
+    public GameObject projectile;
 
     void Update()
     {
         // Ctrl was pressed, launch a projectile
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown("space"))
         {
+            Debug.Log("FIRE");
             // Instantiate the projectile at the position and rotation of this transform
-            Rigidbody clone;
+            GameObject clone;
             clone = Instantiate(projectile, transform.position, transform.rotation);
 
             // Give the cloned object an initial velocity along the current

@@ -57,6 +57,7 @@ public class HighlightController : MonoBehaviour
             print("space key was pressed");
             if (highlightedOption == 3)
             {
+                GameStats.BattleNum = 1;
                 SceneManager.LoadScene("Map Scene", LoadSceneMode.Single);
             }
         }

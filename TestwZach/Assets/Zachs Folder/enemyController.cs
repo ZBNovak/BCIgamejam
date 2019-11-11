@@ -19,7 +19,7 @@ public class enemyController : MonoBehaviour {
     //Enemy Health
     private int initialHealth = 100;
     private int health;
-    GameObject healthBarEnemy = GameObject.Find("healthBarEnemy");
+    GameObject healthBarEnemy;
     private float scaleWidth = .0355268F;
     private float scaleX = .0371854F, scaleY = 0.009413587F, scaleZ = 0.008859847F;
     private float xWidth = .00122F;
@@ -41,6 +41,7 @@ public class enemyController : MonoBehaviour {
         anim.SetBool("inScene", false);
         lastTime = Time.time;
         health = initialHealth;
+        healthBarEnemy = GameObject.Find("healthBarEnemy");
         healthBarEnemy.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
     }
 

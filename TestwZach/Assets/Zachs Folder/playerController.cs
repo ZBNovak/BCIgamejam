@@ -29,7 +29,5 @@ public class playerController : MonoBehaviour
         }
         else
             anim.SetBool("inScene", false);
-
-
     }
 }

@@ -11,6 +11,7 @@ public class GameStats : MonoBehaviour
     private void Start() {
         BattleNum = 1;
         Score = 0;
+        Path = 1;
     }
 
 

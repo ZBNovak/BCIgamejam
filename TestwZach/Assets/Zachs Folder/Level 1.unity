@@ -358,7 +358,7 @@ MonoBehaviour:
   Shielded: 0
   Missile: {fileID: 1449735215576005377, guid: 3cce241c6f4347b40baa732528a317e0, type: 3}
   Lazer: {fileID: 4372123597035417914, guid: 33a5554d12fef2a4aa0245f3156a9a4a, type: 3}
-  Shield: {fileID: 657303159925717341, guid: 01a7833be5802384ea79e673ebda280a, type: 3}
+  Shield: {fileID: 657303159925717341, guid: 356319e70c0804cb2a3f0510be4a2893, type: 3}
   SpawnforWep: {fileID: 653674251}
 --- !u!212 &341685951
 SpriteRenderer:
@@ -1913,8 +1913,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: -52}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -143.75, y: -45.23}
+  m_SizeDelta: {x: 148.5, y: 18.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686574127
 MonoBehaviour:

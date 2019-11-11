@@ -10,14 +10,15 @@ public class playerController : MonoBehaviour
     private Animator anim;
     //Scene object
     private Scene scene;
-    public static int health = 100;
+    public static int health;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         anim.SetBool("inScene", false);
-        
+        health = 100;
+        PlayerHealthCounter.Counter = health;
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class playerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col) {
         print("Enemy Hit");
+        //BattleOptionController.Shielded = true;
         if (col.gameObject.tag == "Lazer") {
             print("Enemy Hit by LAzer");
             if (BattleOptionController.Shielded == false) {

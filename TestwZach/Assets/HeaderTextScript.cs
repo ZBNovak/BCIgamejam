@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HeaderTextScript : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class HeaderTextScript : MonoBehaviour
 
 
     void Start() {
-        PHC = GetComponent<Text>();  // if you want to reference it by code - tag it if you have several texts 
-        PHC.text = "SPACE BRAINZ: FIGHT!";
+        PHC = GetComponent<Text>();
+        Counter = SceneManager.GetActiveScene().name;// if you want to reference it by code - tag it if you have several texts 
+        PHC.text = Counter.ToString();
     }
 
     void Update() {

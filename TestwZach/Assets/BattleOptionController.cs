@@ -52,14 +52,14 @@ public class BattleOptionController : MonoBehaviour
     public float timeBetweenWeapons;
     private float lastTime;
 
-    public static bool Shielded = false;
+    public static bool Shielded;
     void Update() {
         if (timeBetweenWeapons - (Time.time - lastTime) > 0)
             CooldownDisplay.Counter = (timeBetweenWeapons - (Time.time - lastTime));
         else
             CooldownDisplay.Counter = 0f;
 
-        if (GameObject.Find("ShieldCloneP")) {
+        if (GameObject.FindGameObjectWithTag("Shield")) {
             Shielded = true;
             print("P shields up");
         }

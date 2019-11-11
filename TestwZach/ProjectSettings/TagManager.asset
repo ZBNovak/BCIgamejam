@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Missile
   - Lazer
+  - Shield
+  - Shield2
   layers:
   - Default
   - TransparentFX

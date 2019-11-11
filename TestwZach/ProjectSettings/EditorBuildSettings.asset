@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Zachs Folder/BossBattle.unity
     guid: 03e47e22a0386fd40ad5f1972e38686e
+  - enabled: 1
+    path: Assets/Jasons Folder/MapScene/End Scene Win.unity
+    guid: 71b9cd7d895b244cc8cb20f32f8f0568
+  - enabled: 1
+    path: Assets/Jasons Folder/MapScene/End Scene Lose.unity
+    guid: 7982495fceead4a7fa38809c883ca95f
   m_configObjects: {}

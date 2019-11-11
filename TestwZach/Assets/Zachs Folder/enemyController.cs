@@ -44,7 +44,7 @@ public class enemyController : MonoBehaviour {
         lastTime = Time.time;
         health = initialHealth;
         if (GameStats.Path == GameStats.BattleNum)
-            health += 50;
+            health += 25;
         healthBarEnemy = GameObject.Find("healthBarEnemy");
         healthBarEnemy.transform.localScale = new Vector3(scaleX, scaleY, scaleZ); //init scale
 
@@ -89,7 +89,7 @@ public class enemyController : MonoBehaviour {
         }
 
         //check if shields are up
-        if (GameObject.Find("ShieldClone")) {
+        if (GameObject.FindGameObjectWithTag("Shield2")) {
             Shielded = true;
             print("en shielded");
         }
@@ -113,18 +113,18 @@ public class enemyController : MonoBehaviour {
         if (col.gameObject.tag == "Lazer") {
             print("Enemy Hit by LAzer");
             if (Shielded == false) {
-                health = health - 15;
+                health -= 15;
                 calculateHealthBar();
             }
         }
         else {
             print("Enemy hit by missile");
             if (Shielded == false) {
-                health = health - 25;
+                health -= 25;
                 calculateHealthBar();
             }
             else {
-                health = health - 5;
+                health -= 5;
                 calculateHealthBar();
             }
         }
@@ -163,18 +163,18 @@ public class enemyController : MonoBehaviour {
         switch (weapon) {
             case 1:
                 clone = Instantiate(Lazer, SpawnPos.transform.position, transform.rotation);
-                timeBetweenWeapons = 9 - GameStats.BattleNum;
+                timeBetweenWeapons = 10 - GameStats.BattleNum;
                 break;
             case 2:
                 clone = Instantiate(Missile, SpawnPos.transform.position, transform.rotation);
-                timeBetweenWeapons = 12 - GameStats.BattleNum;
+                timeBetweenWeapons = 13 - GameStats.BattleNum;
                 break;
             case 3:
                 ShieldClone = Instantiate(Shield, transform.position, transform.rotation);
                 Destroy(ShieldClone, 3);
                 //ADD VARIABLE BOOL SHIELD UP OR NAH 
                 //If shieldClone != exist then shield down > put this in update ^
-                timeBetweenWeapons = 2;
+                timeBetweenWeapons = 3;
                 break;
         }
         return;

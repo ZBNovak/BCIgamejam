@@ -21,10 +21,11 @@ public class EndGameController : MonoBehaviour
 
 
 
-            if (enemyController.health < 1) {
+            if (playerController.health < 1) {
                 HeaderTextScript.Counter =  "YOU LOSE";
                 print("YOUR SCORE" + GameStats.Score);
-                //Go to end screen and display score 
+                //Go to end screen and display score
+                SceneManager.LoadScene("End Scene Lose", LoadSceneMode.Single);
             }
             else {
                 HeaderTextScript.Counter = "YOU WIN";
@@ -33,8 +34,9 @@ public class EndGameController : MonoBehaviour
                     GameStats.Score = GameStats.Score * GameStats.Score;
                 //Go to next battle
 
-                Invoke("SwitchScenes", 5);
-
+                print("invoking");
+                //Invoke("SwitchScenes", 5f);
+                SwitchScenes();
             }
         }
 
@@ -45,8 +47,10 @@ public class EndGameController : MonoBehaviour
             //SceneManager.LoadScene("BossBattle", LoadSceneMode.Single);
             //Enter Loading Screen
             print("GAME OVER");
+            SceneManager.LoadScene("End Scene Win", LoadSceneMode.Single);
         }
         if (GameStats.Path == (GameStats.BattleNum - 1)) {
+            print("Switching to Boss Battle");
             SceneManager.LoadScene("BossBattle", LoadSceneMode.Single);
         }
         if (GameStats.BattleNum == 2) {
